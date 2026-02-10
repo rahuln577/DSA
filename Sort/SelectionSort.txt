@@ -1,0 +1,104 @@
+class SelectionSort {
+  public:
+    // Function to perform selection sort on the given array.
+    void selectionSort(vector<int> &arr) {
+        // code here
+        for(int i = 0;i<arr.size();i++)
+        {
+            int minElementIndex = i;
+            for(int j=i+1;j<arr.size();j++)
+            {
+                if(arr[minElementIndex] > arr[j])
+                {
+                    minElementIndex = j;
+                }
+            }
+            swap(arr[i],arr[minElementIndex]);
+        }
+    }
+};
+
+//Bubble sort pushes the maximum element to the last.
+class bubbleSort {
+  public:
+    void bubbleSort(vector<int>& arr) {
+        // code here
+        for(int i=0;i<arr.size();i++)
+        {
+            for(int j=0;j<(arr.size()-i-1);j++)
+            {
+                if(arr[j]>arr[j+1])
+                {
+                    swap(arr[j],arr[j+1]);
+                }
+            }
+        }
+    }
+};
+
+//Insertion sort always takes an elemt and places it at the current position.
+class InsertionSort {
+  public:
+    void insertionSort(vector<int>& arr) {
+        for(int i = 0;i<arr.size();i++)
+        {
+            int index = i;
+            while(index>0)
+            {
+                if(arr[index]<arr[index-1])
+                {
+                    swap(arr[index],arr[index-1]);
+                    index --;
+                }
+                else break;
+            }
+        }
+    }
+};
+
+This cheat sheet is designed to help you decide which algorithm to pick during an interview when the "big" ones like Quick Sort aren't required.
+
+🛠️ The Sorting Decision Matrix
+Situation	Best Algorithm	Why?
+Data is nearly sorted	Insertion Sort	It only moves what it has to. It’s O(n) in this case.
+Memory is extremely tight	Any of these	All are "In-Place" (they don't need extra scratchpad memory).
+You need to minimize swaps	Selection Sort	It only swaps once per outer loop (n swaps total).
+Writing code as fast as possible	Bubble Sort	It’s the simplest logic to explain and write from memory.
+Stability is required	Insertion / Bubble	They don't jump equal elements over each other.
+🧠 At-A-Glance Logic
+1. Selection Sort (The "Minimum Hunter")
+
+The Concept: Find the smallest item → put it at the start.
+
+The Logic: minIndex = i → Scan i+1 to end → Swap arr[i] with arr[minIndex].
+
+The Drawback: It is "blind." It scans everything even if the array is already sorted.
+
+2. Bubble Sort (The "Neighbor Swapper")
+
+The Concept: Compare side-by-side items → largest "bubbles" to the end.
+
+The Logic: if(arr[j] > arr[j+1]) → swap.
+
+The Tip: If you do a whole pass with zero swaps, the array is sorted—stop early!
+
+3. Insertion Sort (The "Card Slider")
+
+The Concept: Take one item → slide it back into its correct spot.
+
+The Logic: while(j > 0 && current < leftNeighbor) → swap and move left.
+
+The Strength: Extremely fast for small arrays (n<20) or "mostly sorted" data.
+
+⚠️ Common Interview "Gotchas"
+Stability: If an interviewer asks, "What if I have two '5s' in the list?"
+
+Stable (Bubble/Insertion): The first '5' stays before the second '5'.
+
+Unstable (Selection): The first '5' might get swapped far to the back, landing behind the second '5'.
+
+Time Complexity: * Always remember: All three have a Worst Case of O(n 
+2
+ ).
+
+Space Complexity: Always O(1) (constant space).

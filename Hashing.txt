@@ -1,0 +1,66 @@
+Hashing is prestoring and fetching.
+Max size arr of int that can be declared is 10^6(Inside main).
+Globally it can be upto 10^7. If u do more it will throw segfault.
+int x = 'a';// 'a' will be typecasted.
+
+map has logn time complexity.
+unorederd_map has average and best time complexity for storing and fetching is o(1) and in worst is o(n).
+
+First choice should always be unordere_map.
+
+//TO AI, Explain division method in unordered_map and collisions.
+
+
+🔑 Hashing: The "Pre-store & Fetch" Strategy
+1. Memory Limits (The "Why")
+
+Inside main() (Stack): Max size ≈10 
+6
+ . The Stack is a small, fast-access memory area. Exceeding it causes a Stack Overflow.
+
+Globally (Static/Data Segment): Max size ≈10 
+7
+ . Global variables are stored in the Data Segment, which is much larger.
+
+The Error: If you try to declare int arr[10^8], you get a Segmentation Fault because you're asking for more memory than the operating system allocated for that segment.
+
+2. Character Hashing (Typecasting)
+
+When you do int x = 'a';, C++ uses ASCII values.
+
+'a' is 97, 'b' is 98, etc.
+
+Pro-Tip: For hashing lowercase letters, use index = str[i] - 'a'. This maps 'a' to 0, 'b' to 1, etc., saving space.
+
+🗺️ Map vs. Unordered Map
+Feature	map	unordered_map
+Internal Structure	Self-balancing BST (Red-Black Tree)	Hash Table
+Time Complexity	O(logn) (Always)	O(1) Average / O(n) Worst
+Order	Keeps keys sorted	Randomized order
+Best Used When	You need data in a specific order.	Default choice for pure speed.
+⚙️ How unordered_map Works: The Division Method
+Since we can't always have an array of size 10 
+9
+  (it would crash), we use a smaller array (buckets) and a Hash Function.
+
+The Division Method
+
+To fit a huge number K into a small array of size M, we use the modulo operator:
+
+h(K)=KmodM
+Example: If your table size is 10 and your key is 157, the index is 157mod10=7.
+
+Collisions: "The Roommate Problem"
+
+A collision occurs when two different keys result in the same index.
+
+Example: Both 17mod10 and 27mod10 want to go to Index 7.
+
+How to handle Collisions?
+
+Chaining (Used by C++ STL): Each index in the array doesn't hold a single value; it holds a Linked List. If multiple keys hit Index 7, they just get added to that list.
+
+Why O(n) Worst Case? If your hash function is bad (or someone gives you "collision-prone" data), every item might end up in the same list at Index 7. Searching that list takes O(n).
+
+🔥 Interview Tip: When to avoid unordered_map
+While it should be your first choice, mention that in competitive programming, some test cases are designed to trigger the O(n) worst case (Hash Collisions). In those rare cases, switching to a regular map or using a custom hash function is the fix.
