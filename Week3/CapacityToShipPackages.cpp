@@ -32,7 +32,7 @@ Example 3:
 Input: weights = [1,2,3,1,1], days = 4
 Output: 3
 Explanation:
-1st day: 1
+1st day:  1
 2nd day: 2
 3rd day: 3
 4th day: 1, 1
