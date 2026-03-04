@@ -78,7 +78,7 @@ class Solution {
             {
                 temp += arr[i];
             }
-            else if(arr[i]<=maxPages)
+            else if(arr[i]<=maxPages) 
             {
                 temp = arr[i];
                 count++;
