@@ -68,7 +68,7 @@ Space Complexity	O(1)	Constant extra space.
 
 class Solution {
   public:
-    bool check(vector<int> &arr, int k,int maxPages)
+    bool check(vector<int> &arr, int k,int maxPages) 
     {
         int count = 1;
         int temp = arr[0];
