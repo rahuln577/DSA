@@ -80,7 +80,7 @@ class Solution {
             }
             else if(arr[i]<=maxPages) 
             {
-                temp = arr[i];
+                temp = arr[i] ;
                 count++;
             }
             else{
