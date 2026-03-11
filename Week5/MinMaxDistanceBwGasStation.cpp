@@ -112,4 +112,4 @@ class Solution {
         }
         return pq.top().first;
     }
-};
+} ;
