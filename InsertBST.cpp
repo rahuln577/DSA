@@ -65,5 +65,5 @@ int main()
         root = insertNode(root,n);
            
     }
-    inorder(root);
+    inorder(root) ;
 }
