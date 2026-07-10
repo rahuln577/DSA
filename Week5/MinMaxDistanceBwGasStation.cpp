@@ -104,7 +104,7 @@ class Solution {
         }
         while(K>0)
         {
-            auto maxi = pq.top();
+            auto maxi = pq.top() ;
             hasPoints[maxi.second]++;
             K--;
             pq.pop();
