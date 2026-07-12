@@ -67,7 +67,7 @@ Space Complexity	O(1)	No extra space used.
 
 class Solution {
 public:
-    int findKthPositive(vector<int>& arr, int k) {
+    int findKthPositive(vector<int>& arr, int k)  {
         if((arr[arr.size()-1] - arr.size())<k)return arr[arr.size()-1]+(k-(arr[arr.size()-1] - arr.size()));
         int st = 0,end = arr.size()-1;
         int tempAns;
