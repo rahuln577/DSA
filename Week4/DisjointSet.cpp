@@ -32,7 +32,7 @@ class DisjointSet
             }
             else if(size[pv]>=size[pu]) 
             {
-                parent[pu] = pv;
+                parent[pu] = pv; 
                 size[pv]+=size[pu];
             }
         }
