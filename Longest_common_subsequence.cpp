@@ -17,7 +17,7 @@ Explanation: The longest common subsequence is "ace" and its length is 3.
 
 /*
 At each index if the characters in both the strings are same then move -1 in both and add +1 to the value.
-IF it is not equal you can either move ind1 back or ind2 back and calculate the max.
+IF it is not equal you can either move ind1 back or ind2 back and calculate the max. 
 */
 
 class Solution {
