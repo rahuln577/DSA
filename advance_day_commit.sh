@@ -42,7 +42,7 @@ commit_date="$(get_tomorrow_date)"
 export GIT_AUTHOR_DATE="$commit_date"
 export GIT_COMMITTER_DATE="$commit_date"
 
-git add --all
+git add .
 
 if git commit -m "day $next_day"; then
   echo "Committed 'day $next_day' with date $commit_date."
