@@ -71,7 +71,7 @@ class Solution {
                     dp[j] = 1 + dp[j - 1];
                     ans = max(ans, dp[j]);
                 } else {
-                    dp[j] = 0; // Crucial reset on mismatch
+                    dp[j]  = 0; // Crucial reset on mismatch
                 }
             }
         }
