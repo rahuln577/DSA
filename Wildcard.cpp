@@ -17,7 +17,7 @@ Explanation: '?' matches with 'b' and '*' matches with "de".
 /*
 This is **Wildcard Matching**. To remember this, think of it as **"The Flexible Sponge"**: `?` matches a single character, while `*` acts like an elastic sponge that can absorb **zero or more** characters.
 
----
+--- 
 
 ## 1. The Strategy: Handling the `*`
 
